@@ -26,7 +26,7 @@ namespace h1_oop_sql_aflevering_dotnetCore
 
         public void InsertIntoDB()
         {
-            string sql = "INSERT INTO Kunde ( Navn, Telefon, Email, Kundetype ) VALUES ('c sharp','26129604', 'victor@reipur.dk', 'standard')";
+            string sql = $"INSERT INTO Kunde ( Navn, Telefon, Email, Kundetype ) VALUES ('{navn}','{telefon}', '{email}', '{kundeType}')";
             try
             {
                 SqlConn.insert(sql);

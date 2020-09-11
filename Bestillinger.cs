@@ -1,5 +1,8 @@
 using System;
+using System.Data;
+using System.Linq;
 using System.Data.SqlClient;
+using System.Collections.Generic;
 
 
 namespace h1_oop_sql_aflevering_dotnetCore
@@ -29,7 +32,7 @@ namespace h1_oop_sql_aflevering_dotnetCore
             
             try
             {
-                SqlConn.insert(sql);
+                Sql.insert(sql);
                 Console.WriteLine($"Bestilling med kunde id {KundeId} oprettet på tabellen");
             }
             catch (Exception)
@@ -45,5 +48,31 @@ namespace h1_oop_sql_aflevering_dotnetCore
             // return base.ToString();
             return $"Bestillings instans: {KundeId}, {BestillingsTid}, {Film}, {AntalPladser}, {BetaltEllerReserveret},";
         }
+
+        // public static List<Bestillinger> DanBestillingerListe()
+        // {
+        //     string sql = "Select * from Bestillinger";
+        //     DataTable bestillingDataTable = Sql.ReadTable(sql);
+
+        //     List<Bestillinger> listBestillinger = new List<Bestillinger>();
+
+        //     foreach (DataRow bestillingData in bestillingDataTable.Rows)
+        //     {
+        //         listBestillinger.Add(new Bestillinger()
+        //         {
+        //             // // BestillingerId = Convert.ToInt32(kundeData["BestillingerId"]),
+        //             // Navn    = kundeData["Navn"].ToString(),
+        //             // Telefon = kundeData["Telefon"].ToString(),
+        //             // Email   = kundeData["Email"].ToString(),
+        //             // BestillingerType = kundeData["KundeType"].ToString()
+        //         });
+        //     }
+
+        //     // //En specifik rækker, her den første ellers kan [0] udskiftes med tal eller tæller
+        //     // string denførsterække = kundeDataTable.Rows[0]["Navn"].ToString();
+        //     // Console.WriteLine("Den første række " + denførsterække + kundeDataTable.Rows.Count);
+
+        //     return listKunde;
+        // }
     }
 }
